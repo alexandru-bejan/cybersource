@@ -1,0 +1,75 @@
+@import "~base/variables";
+@import "bootstrap/scss/variables";
+@import "checkoutComponents";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "~base/components/formFields";
+@import "~base/components/creditCardField";
+@import "~base/checkout/checkout";
+@import "../customvariable";
+@import "thanku";
+
+.address-suggestion {
+    position: relative;
+    .btn-manual-toggle {
+        cursor: pointer;
+    }
+}
+
+.search-suggestion{
+    background-color: $grey1;
+    box-shadow: 0 0.2rem 0.2rem 0 rgba(0,0,0,.2);
+    height: 14rem;
+    overflow-y: scroll;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    .d-none {
+      display: none;
+    }
+  }
+
+  .address {
+    cursor: pointer;
+    padding-bottom: 0.5rem;
+  }
+  
+  .address:hover {
+    background-color: $grey2;
+  }
+
+  .selected {
+    background-color: $grey2;
+  }
+  
+  .description {
+    color: $grey4;
+  }
+  .container.data-checkout-stage {
+    padding-bottom: 20px;
+  }
+  #billing-user-content, .payment-form-content {
+    border: 0;
+  }
+  
+  .card {
+    .worldpayCreditFields .dwfrm_billing_creditCardFields_expirationMonth
+    .worldpayCreditFields .dwfrm_billing_creditCardFields_expirationYear {
+      label {
+        top: 1px;
+      }
+    }
+   
+    .billing-address-block  {
+      .btn-show-details,
+      .btn-add-new {
+        font-size: 12px;
+        color: #fff;
+        background: #000;
+        max-width: 126px;
+        border-radius: 4px;
+        margin: 10px 0 0 20px;
+      }
+    }
+  }
+  

@@ -1,0 +1,35 @@
+#accordion {
+  margin-top: 2rem;
+}
+
+.mb-0 {
+  margin-right: 1rem;
+}
+
+.mb-0 > a {
+  display: block;
+  position: relative;
+}
+
+.mb-0 > a:after {
+  content: "\f067"; /* fa-chevron-down */
+  font-family: "FontAwesome";
+  position: absolute;
+  right: -0.5rem;
+  width: 0;
+  height: 1rem;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.mb-0 > a[aria-expanded="true"]:after {
+  content: "\f068"; /* fa-chevron-up */
+}
+
+div.card-header {
+  background-color: $grey2;
+  a {
+		text-decoration: none;
+	}
+}

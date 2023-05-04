@@ -1,0 +1,8 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "~base/checkout/checkoutComponents";
+
+.page {
+    background-color: transparent;// custom change
+}

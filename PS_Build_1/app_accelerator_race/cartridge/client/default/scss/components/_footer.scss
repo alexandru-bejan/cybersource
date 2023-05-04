@@ -1,0 +1,12 @@
+footer {
+	.back-to-top {
+		em {
+			&.fa-circle {
+				text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+			}
+			&.fa-arrow-up {
+				color: $footer-red-bg;
+			}
+		}
+	}
+}

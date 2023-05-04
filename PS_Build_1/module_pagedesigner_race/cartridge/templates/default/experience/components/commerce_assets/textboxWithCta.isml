@@ -1,0 +1,24 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addJs('/js/textboxCTA.js');
+</isscript>
+<div class="text-box-container" style="color:${pdict.fontColor}; background-color:${pdict.BgColor}">
+	<div class="inner-container ${pdict.containerAlignHorizontal} ${pdict.containerAlignVertical}">
+      <isif condition="${pdict.textHeadline}">
+      	<h2 class="textbox-headline">${pdict.textHeadline}</h2>
+      </isif>
+      <isif condition="${pdict.textSubline}">
+      	<p class="textbox-para">${pdict.textSubline}</p>
+      </isif>
+      <isif condition="${pdict.buttonLabel1 || pdict.buttonLabel2}">
+	      <div class="button-holder">	
+		      <isif condition="${pdict.buttonLabel1}">
+		      	<a class="btn btn-primary" href="${pdict.buttonURL1}">${pdict.buttonLabel1}</a>
+		      </isif>
+		      <isif condition="${pdict.buttonLabel2}">
+		      	<a class="btn btn-primary" href="${pdict.buttonURL2}">${pdict.buttonLabel2}</a>
+		      </isif>
+	      </div>
+      </isif>
+  </div>
+</div>

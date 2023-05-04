@@ -1,0 +1,84 @@
+@import "~base/components/common";
+
+.quantity-form {
+    border-width: .0625rem; //custom change
+    border-style: solid; //custom change
+    max-width: 6.6rem; //custom change
+    .quantity {
+        color: inherit;
+    }
+}
+
+.quantity-select {
+    float: left; //custom change
+    max-width: 2.2rem; //custom change
+    border-radius: 0; //custom change
+    border: 0;
+    text-align: center; //custom change
+    padding: 0; //custom change
+    height: 2.5rem; //custom change
+    background-color: transparent;
+    color: inherit;
+}
+
+.minus, .add {
+    padding: 0.25rem 0.5rem; //custom change
+    float: left; //custom change
+    font-size: 1.25rem; //custom change
+    color: inherit;
+
+    &:hover {
+        text-decoration: none; //custom change
+        color: inherit;
+    }
+}
+
+.quantity-label {
+    display: block;
+}
+
+.paypal-btn {
+    img {
+        height: 1.563rem;//custom change
+    }
+}
+
+.btn-gold {
+    background-color: $yellow; //custom change
+    border: none;
+    &:hover {
+        box-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.05);//custom change
+        background-color: $yellow; //custom change
+    }
+}
+
+.navbar-header .user .popover a {
+    .fa-user {
+        left: 0.4rem;
+    }
+    .fa-sign-out {
+        left: 0.4rem;
+    }
+}
+
+.nav {
+    .fa-user {
+        @include media-breakpoint-down(xs) {
+            padding-left: 0.2rem;
+        }
+    }
+    .fa-sign-out {
+        @include media-breakpoint-down(xs) {
+            padding-left: 0.1rem;
+        }
+    }
+}
+
+#myaccount .fa-sign-in {
+    padding-right: 0.25rem;
+}
+
+#removeProductModal {
+    z-index: 1060;
+    background-color: rgba(0,0,0,0.5);
+}

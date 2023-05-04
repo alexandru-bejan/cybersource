@@ -1,0 +1,139 @@
+<isset name="miniCart" value="${true}" scope="page" />
+<isset name="sfraEnableOverlayApplePay" value="${'sfraEnableOverlayApplePay' in dw.system.Site.current.preferences.custom && dw.system.Site.current.preferences.custom.sfraEnableOverlayApplePay}" scope="page" />
+<isset name="racePayPalStandalone" value="${'racePayPalStandalone' in dw.system.Site.current.preferences.custom && dw.system.Site.current.preferences.custom.racePayPalStandalone}" scope="page" />
+<isset name="paypal" value="${pdict.paypal}" scope="page" />
+<div class="container cart">
+    <isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+        <isinclude template="reporting/reportingUrls" />
+    </isif>
+    <div>
+        <div class="row estimated-total">
+            <div class="col-4">
+                <!-- brand change -->
+                <a class="normal" href="${URLUtils.https('Cart-Show')}"
+                    title="${Resource.msg('link.view.cart', 'cart', null)}">
+                    ${Resource.msg('link.view.shopping.bag', 'cart', null)}
+                </a>
+            </div>
+            <div class="col-8 d-flex">
+                <p class="text-right sub-total">
+                    <span>${Resource.msg('label.subtotal', 'cart', null)}</span>
+                    <button type="button" class="info-icon mr-1">
+                        <span class="icon" aria-hidden="true">?</span>
+                        <span class="sr-only">${Resource.msg('label.help', 'cart', null)}</span>
+                        <span class="tooltip d-none">${Resource.msg('label.subtotal.tooltip', 'cart', null)}</span>
+                    </button>
+                    <span class="basket-subtotal">${pdict.totals.subTotal}</span>
+                </p>
+            </div>
+        </div>
+        <div class="minicart-error cart-error">
+            <isif condition="${pdict.valid.error && pdict.items.length !== 0}">
+                <div class="alert alert-danger alert-dismissible valid-cart-error fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    ${pdict.valid.message}
+                </div>
+            </isif>
+        </div>
+        <div class="product-summary">
+            <div class="row">
+                <div class="col-12">
+                    <div class="promotion-msg">
+                        <isinclude template="cart/cartApproachingDiscount" />
+                    </div>
+                </div>
+            </div>
+            <isloop items="${pdict.items}" var="lineItem">
+                <div class="row">
+                    <div class="col-12">
+                        <isif condition="${lineItem.bonusProductLineItemUUID === 'bonus'}">
+                            <div class="card ${miniCart ? 'bonus-product-line-item' : ''} uuid-${lineItem.UUID}">
+                                <div class="card-body">
+                                    <isinclude template="checkout/productCard/bonusProductCard" />
+                                </div>
+                            </div>
+                        <iselse/>
+                            <div class="card uuid-${lineItem.UUID}">
+                                <div class="card-body">
+                                    <isif condition="${lineItem.noProduct === true}">
+                                        <isinclude template="checkout/productCard/uncategorizedProductCard" />
+                                    <iselse/>
+                                        <isinclude template="checkout/productCard/productCard" />
+                                    </isif>
+                                </div>
+                            </div>
+                        </isif>
+                    </div>
+                </div>
+            </isloop>
+        </div>
+    </div>
+
+
+    <div class="minicart-footer">
+        <div class="row">
+            <div class="col-12 price-fields">
+                <p class="text-right order-discount order-discount-total <isif condition="
+                    ${pdict.totals.orderLevelDiscountTotal.value === 0}">hide-order-discount</isif>">
+                    <button type="button" class="info-icon mr-1">
+                        <span class="icon" aria-hidden="true">?</span>
+                        <span class="sr-only">${Resource.msg('label.help', 'cart', null)}</span>
+                        <span class="tooltip d-none">
+                            <isloop items="${pdict.totals.discounts}" var="discount">
+                                <isif condition="${discount.type === 'promotion'}">
+                                    ${discount.callOutMsg}
+                                </isif>
+                            </isloop>
+                        </span>
+                    </button>
+                    <span>${Resource.msg('label.order.discount', 'common', null)}</span>:&nbsp;
+                    -<span class="basket-order-discount">${pdict.totals.orderLevelDiscountTotal.formatted}</span>
+                </p>
+                <p class="text-right grand-total <isif condition=" ${pdict.totals.orderLevelDiscountTotal.value === 0}">
+                    hide-order-discount</isif>">
+                    <span>${Resource.msg('label.estimatedtotal', 'cart', null)}</span>:&nbsp;
+                    <span class="basket-grandtotal">${pdict.totals.estimatedTotal.formatted}</span>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <isinclude template="cart/cartPromoCode" />
+                <div class="coupons-and-promos">
+                    <isinclude template="cart/cartCouponDisplay" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 checkout-continue">
+                <isinclude template="cart/checkoutButtons" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="${sfraEnableOverlayApplePay ? 'col-6' : 'col-12'} paypal-btn">
+                <div class="mb-sm-3">
+                    <isif condition="${racePayPalStandalone && paypal && paypal.cartButtonEnabled}">
+                        <isinclude template="paypal/cart/paypalMinicartScripts" />
+                        <isinclude template="paypal/cart/paypalMinicartContent" />
+                    </isif>
+                </div>
+            </div>
+            <isif condition="${sfraEnableOverlayApplePay}">
+                <div class="col-6 paypal-btn">
+                    <div class="mb-sm-3">
+                        <a href="#"
+                            class="btn btn-primary btn-gold btn-block paypal-btn ${pdict.valid.error ? 'disabled' : ''}"
+                            role="button">
+                            <img
+                                src="https://cdn.worldvectorlogo.com/logos/apple-pay.svg" />
+                        </a>
+                    </div>
+                </div>
+            </isif>
+        </div>
+
+        <isinclude template="cart/cartRemoveCouponModal" />
+    </div>
+</div>

@@ -1,0 +1,51 @@
+@import "~base/variables";
+
+.hero-custom-banner {
+    position: relative;
+    max-height: 26.125rem;
+    overflow: hidden;
+
+    .banner-img-holder {
+        min-height: 5rem;
+        text-align: center;
+
+        @include media-breakpoint-up(lg) {
+            min-height: 8rem;
+        }
+
+        img {
+            max-width: 100%;
+
+            @include media-breakpoint-up(lg) {
+                // max-height: 26.125rem;
+            }
+        }
+    }
+
+    .banner-text-holder {
+        position: absolute;
+        top: 2rem;
+
+        @include media-breakpoint-up(sm) {
+            top: 20%;
+        }
+
+        h1 {
+            color: $white;
+            font-size: 1.5rem;
+            padding-left: 6rem;
+            margin: 0;
+            position: static;
+
+            @include media-breakpoint-up(sm) {
+                font-size: 2rem;
+            }
+
+            @include media-breakpoint-up(lg) {
+                font-size: 3rem;
+                left: 0;
+                padding-left: 25rem;
+            }
+        }
+    }
+}

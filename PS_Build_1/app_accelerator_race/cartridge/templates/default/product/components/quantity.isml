@@ -1,0 +1,23 @@
+<isset name="quantityValue" value="${product.selectedQuantity}" scope="page" />
+
+<label class="quantity-label" for="quantity-${loopState && loopState.count ? loopState.count : '1' }">${Resource.msg('label.quantity', 'common', null)}</label>
+<div class="quantity-form clearfix quantity-selector" <isif condition="${product.productType === 'master'}">disabled</isif>>
+<a href="javascript:void(0);" class="minus <isif condition="${product.selectedQuantity <= 1}">disabled-btn</isif>">&minus;</a>
+<button type="button" class="js-minus-remove cs-minus-remove d-none remove-product" data-toggle="modal"
+  data-target="#removeProductModal" data-pid="${lineItem.id}" data-name="${lineItem.productName}"
+  data-action="${pdict.actionUrls.removeProductLineItemUrl}" data-uuid="${lineItem.UUID}"
+  aria-label="${Resource.msgf('text.remove.line.item', 'cart', null, lineItem.productName)}">
+  <i class="fa fa-trash"></i>
+</button>
+<input 
+    type="text" 
+    data-max-qty="${product.inventory ? product.inventory.ats : null}"
+    data-value="${1}"
+    data-pre-select-qty="${1}"
+    class="quantity-select form-control"
+    <isif condition="${product.productType !== 'bundle'}">data-url="${quantity.url}"</isif>
+    id="quantity-${product.selectedQuantity.toFixed(0)}"
+    value="${product.selectedQuantity.toFixed(0)}"
+/>
+<a href="javascript:void(0);" class="add ${product.inventory && quantityValue >= product.inventory.ats ? 'disabled-btn' : ''}">&plus;</a>
+</div>

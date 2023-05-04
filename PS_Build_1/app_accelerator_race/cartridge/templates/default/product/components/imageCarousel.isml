@@ -1,0 +1,94 @@
+<isset name="enableThumbnailView" value="${'enableThumbnailAlternateImageVideo' in dw.system.Site.current.preferences.custom && dw.system.Site.current.preferences.custom.enableThumbnailAlternateImageVideo}" scope="page">
+<isif condition="${enableThumbnailView && !isQuickView}">
+    <div class="product-thumbnails hidden-md-down col-md-1 col-lg-1">
+        <div class="product-slider navigation slider-nav product-fixed">
+            <isset name="thumbnailCount" value="${0}" scope="page" />
+            <isloop items="${product.images['small']}" var="image" status="loopStatus">
+                <div class='thumbnail'  data-gtm-interaction="Image change">
+                    <img src="${image.url}" class="d-block img-fluid" alt="${image.alt}" title="${image.alt}" data-thumbnail-image="image-${loopStatus.index}" />
+                </div>
+            </isloop>
+            <isif condition="${product.videoImage}">
+                <div class='thumbnail video-thumbnail-image' data-gtm-interaction="Video Play" data-videourl="${Resource.msgf('pdp.video.youtube.video.url','product',null,product.productVideo)}" data-videoid="${product.productVideo}" data-toggle="modal" data-target="#videoModal">
+                    <picture>
+                    	<img src="${product.videoImage}" class="d-block img-fluid" alt="${product.productName}" />
+                    	<div class="videoplay-icon"></div>
+                    </picture>
+                </div>
+            </isif>    
+        </div>
+    </div>
+	<div class="primary-images col-12 col-md-5 col-lg-5">
+	    <div id="pdpCarousel-${product.id}" class="product-carousel" data-interval="0">
+	        <div class="product-slider mainImage slider-for product-main-image">
+	            <isloop items="${product.images['large']}" var="image" status="loopStatus">
+	             <isset name="tabletLandScape" value="${(typeof product.images['tabletLandscape'] !== 'undefined' && typeof product.images['tabletLandscape'][loopStatus.index] !== 'undefined') ? product.images['tabletLandscape'][loopStatus.index].url : ''}" scope="page" />
+	             <isset name="tablet" value="${(typeof product.images['tablet'] !== 'undefined' && typeof product.images['tablet'][loopStatus.index] !== 'undefined') ? product.images['tablet'][loopStatus.index].url : ''}" scope="page" />
+	             <isset name="desktop" value="${(typeof product.images['desktop'] !== 'undefined' && typeof product.images['desktop'][loopStatus.index] !== 'undefined') ? product.images['desktop'][loopStatus.index].url : ''}" scope="page" />
+	                <div class="main-slider-wrapper" data-target="#pdpZoomModal">
+                        <picture>
+                            <source media="(min-width: 1200px)" srcset="${desktop}">
+                            <source media="(min-width: 847px)" srcset="${tabletLandScape}">
+                            <source media="(min-width: 544px)" srcset="${tablet}">
+                            <img src="${image.url}" class="product-carousel-img img-fluid mx-auto" title="${image.alt}" alt="${image.alt}" data-large-image="image-${loopStatus.index}" data-zoomimg-url="${image.url}" />
+                        </picture>
+	                </div>
+	            </isloop>
+                <isif condition="${product.videoImage}">
+                     <div class='product-carousel video-thumbnail-image bbb' data-videourl="${Resource.msgf('pdp.video.youtube.video.url','product',null,product.productVideo)}" data-videoid="${product.productVideo}" data-toggle="modal" data-target="#videoModal">
+                         <picture>
+                             <img src="${product.videoImage}" class="d-block  img-fluid" alt="${product.productName}" />
+                             <div class="videoplay-icon"></div>
+                         </picture>
+                     </div>
+                 </isif>
+	        </div>
+	    </div>
+	</div>
+	<isif condition="${product.videoImage}">
+		<isinclude template="product/components/productVideoModal"/>
+	</isif>
+	<isinclude template="product/components/productImageModal"/>
+</isif>
+
+<isif condition="${!enableThumbnailView || isQuickView}">
+	<div class="primary-images col-12 col-sm-6">
+	    <div id="pdpCarousel-${product.id}" class="carousel slide" data-interval="0" data-prev="${Resource.msg('button.previous', 'common', null)}" data-next="${Resource.msg('button.next', 'common', null)}">
+	        <isif condition="${product.images['large'].length > 1}">
+	            <ol class="carousel-indicators" aria-hidden="true">
+	                <isloop items="${product.images['large']}" var="image" status="loopStatus">
+	                    <li data-target="${"#"}pdpCarousel-${product.id}" data-slide-to="${loopStatus.index}" class='<isif condition="${loopStatus.index == 0}">active</isif>'>
+	                    </li>
+	                </isloop>
+	            </ol>
+	        </isif>
+	
+	        <div class="carousel-inner" role="listbox">
+	            <isloop items="${product.images['large']}" var="image" status="loopStatus">
+	                <div class='carousel-item <isif condition="${loopStatus.index == 0}">active</isif>'>
+	                    <img src="${image.url}" class="d-block img-fluid" alt="${image.alt} image number ${image.index}" itemprop="image" />
+	                </div>
+	            </isloop>
+	            <isif condition="${enableThumbnailView && product.videoImage}">
+	                <div class='carousel-item <isif condition="${loopStatus.index == 0}">active</isif>' data-gtm-interaction="Video Play" data-videourl="${Resource.msgf('pdp.video.youtube.video.url','product',null,product.productVideo)}" data-videoid="${product.productVideo}" data-toggle="modal" data-target="#videoModal">
+	                    <picture>
+	                    	<img src="${product.videoImage}" class="d-block img-fluid" alt="${product.productName}" />
+	                    	<div class="videoplay-icon"></div>
+	                    </picture>
+	                    <iframe class="embed-responsive-item" allowfullscreen="allowfullscreen" title="${Resource.msg('pdp.iframe.title', 'product', null)}" src="${Resource.msgf('pdp.video.youtube.video.url','product',null,product.productVideo)}"></iframe>
+	                </div>
+	            </isif>
+	        </div>
+	        <isif condition="${product.images['large'].length > 1}">
+	            <a class="carousel-control-prev" href="${"#"}pdpCarousel-${product.id}" role="button" data-slide="prev">
+	                <span class="fa icon-prev" aria-hidden="true"></span>
+	                <span class="sr-only">${Resource.msg('button.previous', 'common', null)}</span>
+	            </a>
+	            <a class="carousel-control-next" href="${"#"}pdpCarousel-${product.id}" role="button" data-slide="next">
+	                <span class="fa icon-next" aria-hidden="true"></span>
+	                <span class="sr-only">${Resource.msg('button.next', 'common', null)}</span>
+	            </a>
+	        </isif>
+	    </div>
+	</div>
+</isif>

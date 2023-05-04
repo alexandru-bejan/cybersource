@@ -1,0 +1,46 @@
+@import "bootstrap/scss/mixins/breakpoints";
+@import "imageVideoContainer";
+@import "~base/experience/variables";
+@import "~aquatic/customvariable.scss";
+
+.bg-wrapper {
+    position: relative;
+    .textbox-wrapper {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        height: 100%;
+        width: 100%;
+    }
+}
+.play-icon {
+    z-index: 1;
+    position: absolute;
+    top: 0.7rem;
+    padding: 0.3rem 0.7rem 0.3rem 1rem;
+    border-radius: 0.3rem;
+    right: 12%; 
+    @include media-breakpoint-down(md) {
+        right: 22%;  
+    } 
+    @include media-breakpoint-down(xs) {
+        right: 4%;  
+    }  
+    @media only screen 
+    and (min-device-width: $breakpoint-ipad-max) 
+    and (max-device-width: $breakpoint-ipad-pro-max) 
+    and (-webkit-min-device-pixel-ratio: 2){
+        right: 18%;  
+    }
+    background: $grey3;
+    .fa-pause {
+        display: none;
+    }
+}
+.textbox-wrapper .text-box-container .inner-container {
+    width: 40%;
+    border-radius: 6px;
+    @include media-breakpoint-down(xs) {
+        width: 80%; 
+    } 
+}

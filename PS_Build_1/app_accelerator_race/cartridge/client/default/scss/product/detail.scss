@@ -1,0 +1,32 @@
+@import "~base/product/detail";
+@import "../customvariable";
+
+.social-container {
+	.social-icons {
+		em {
+			color: $grey-color;
+			padding-right: 0.2em;
+		}
+	}
+}
+
+.product-name {
+    font-size: 1.5rem;
+}
+
+.product-number {
+	@include media-breakpoint-only(xs) {
+		padding-bottom: 0;
+		padding-top: 0;
+	}
+}
+
+.attribute {
+    margin-top: 0.2em;
+}
+
+.product-number-rating .ratings {
+    @include media-breakpoint-only(xs) {
+        margin-top: -4.1em;
+    }
+}

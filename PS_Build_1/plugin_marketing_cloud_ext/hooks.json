@@ -1,0 +1,31 @@
+{
+    "hooks": [{
+            "name": "app.tracking.preEvents",
+            "script": "~/cartridge/scripts/tracking/dataLayer"
+        },
+        {
+            "name": "app.tracking.event",
+            "script": "~/cartridge/scripts/tracking/dataLayer"
+        },
+        {
+            "name": "app.tracking.postEvents",
+            "script": "~/cartridge/scripts/tracking/dataLayer"
+        },
+        {
+            "name": "app.tracking.asyncData",
+            "script": "~/cartridge/scripts/tracking/asyncTracking.js"
+        },
+        {
+            "name": "app.tracking.getDataLayer",
+            "script": "~/cartridge/scripts/tracking/dataLayer"
+        },
+        {
+            "name": "app.custom.customer.email",
+            "script": "~/cartridge/scripts/hookProxy/customEmailProxy"
+        },
+        {
+            "name": "app.communication.subscriber.addSubscriber",
+            "script": "~/cartridge/scripts/communication/subscriber"
+        }
+    ]
+}

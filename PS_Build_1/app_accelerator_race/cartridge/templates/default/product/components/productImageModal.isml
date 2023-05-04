@@ -1,0 +1,16 @@
+<div class="modal fade pdp-zoom-modal" id="pdpZoomModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close text-right close-button" data-dismiss="modal" aria-label="Close">
+                    <span>${Resource.msg('pdp.iframe.modal.close', 'product', null)}</span> <i class="fa fa-times" aria-hidden="true"></i></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="embed-responsive embed-responsive-16by9">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

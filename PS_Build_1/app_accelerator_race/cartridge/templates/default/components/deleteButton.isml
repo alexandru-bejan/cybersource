@@ -1,0 +1,8 @@
+<a href="javascript:void(0)" class="remove-btn-lg remove-product" data-toggle="modal"
+        data-target=".cart.cart-page #removeProductModal" data-pid="${lineItem.id}"
+        data-name="${lineItem.productName}"
+        data-action="${pdict.actionUrls.removeProductLineItemUrl}"
+        data-uuid="${lineItem.UUID}"
+        aria-label="${Resource.msgf('text.remove.line.item','cart', null, lineItem.productName)}">
+    <span aria-hidden="true">${Resource.msg('label.remove','cart',null)}</span>
+</a>

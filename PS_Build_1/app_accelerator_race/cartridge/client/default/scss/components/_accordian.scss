@@ -1,0 +1,25 @@
+@import "~base/variables";
+
+.accordian-holder {
+    padding-bottom: 1rem;
+
+    .top-heading {
+        padding: 1rem;
+        background-color: $grey2;
+        font-weight: 500;
+
+        p {
+            margin: 0;
+        }
+
+        &.collapsed {
+            .fa-caret-down {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .detail-section {
+        padding: 1rem;
+    }
+}

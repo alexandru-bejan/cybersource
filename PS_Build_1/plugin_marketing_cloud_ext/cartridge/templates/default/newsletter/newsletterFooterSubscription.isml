@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <form action="${pdict.actionURL}" class="newssub-form" method="POST" <isprint value="${pdict.newsForm.attributes}" encoding="off" />>
+            <div class="form-group ${pdict.newsForm.subEmail.mandatory === true ? 'required' : ''}">
+                <label class="form-control-label" for="newletterEmail">
+                    <isprint value="${pdict.newsForm.subEmail.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control" id="newletterEmail"
+                <isprint value="${pdict.newsForm.subEmail.attributes}" encoding="off" />>
+                <div class="invalid-feedback"></div>
+            </div>
+            <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+            <button type="submit" class="btn btn-save btn-block btn-primary">${Resource.msg('news.subscribe','customemails',null)}</button>
+        </form>
+        <div class="sub-response py-1"></div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+$grid-breakpoints: (
+    xs: 0,
+    sm: 544px,
+    md: 1025px,
+    lg: 1026px,
+    xl: 1200px,
+    desktop: 992px,
+    iPad: 768px
+);
+$container-max-widths: (
+    md: 940px,
+    lg: 1024px,
+    xl: 1140px
+);
+$light-grey-bg:#f4f4f4;
+$breakpoint-ipad-min: 768px;
+$breakpoint-ipad-max: 1024px;
+$breakpoint-ipad-pro-max: 1366px;
+$footer-red-bg: #ba0c2f;
+$grey-color: #444;
+$headerBannerTextColor: #ffffff;
+$medium-pink:#ce3d7f;

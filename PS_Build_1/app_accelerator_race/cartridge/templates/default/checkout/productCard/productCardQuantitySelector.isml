@@ -1,0 +1,21 @@
+<div class="quantity-form clearfix quantity-selector">
+    <!--<label class="line-item-pricing-info quantity-label" for="quantity-${lineItem.UUID}">${Resource.msg('field.selectquantity','cart',null)}</label>-->
+    <a href="javascript:void(0);" class="minus <isif condition="${lineItem.quantity < 2}"> disabled-btn d-none</isif>">&minus;</a>
+    <button type="button" class="js-minus-remove cs-minus-remove <isif condition="${lineItem.quantity > 1}"> d-none</isif> remove-product" data-toggle="modal" data-target="#removeProductModal"
+    data-pid="${lineItem.id}" data-name="${lineItem.productName}" data-action="${pdict.actionUrls.removeProductLineItemUrl}" data-uuid="${lineItem.UUID}" aria-label="${Resource.msgf('text.remove.line.item','cart', null, lineItem.productName)}">
+      <i class="fa fa-trash"></i>
+    </button>
+    <input type="tel" class="form-control quantity quantity-box"
+            data-uuid="${lineItem.UUID}"
+            data-pid="${lineItem.id}"
+            data-action="${pdict.actionUrls.updateQuantityUrl}"
+            data-pre-select-qty="${lineItem.quantity}"
+            data-max-qty="${lineItem.inventory ? lineItem.inventory.ats : null}"
+            data-value="${1}"
+            id="quantity-${lineItem.UUID}"
+            name="quantity-${lineItem.UUID}"
+            aria-label="quantity: ${StringUtils.formatInteger(lineItem.quantity)}"
+            value="${StringUtils.formatInteger(lineItem.quantity)}"
+         />
+    <a href="javascript:void(0);" class="add">&plus;</a>
+</div>

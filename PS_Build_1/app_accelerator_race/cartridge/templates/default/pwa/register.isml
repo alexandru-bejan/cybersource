@@ -1,0 +1,85 @@
+<isset name="siteid" value="${require('dw/system/Site').getCurrent().getID()}" scope="page" />
+
+<meta name="theme-color" content="${Resource.msg('pwa.app.theme', 'pwa', null)}" />
+<link rel="manifest" href="${URLUtils.https('Pwa-Manifest').toString()}" crossorigin="use-credentials" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="${Resource.msgf('pwa.app.apple.icon.180', 'pwa', null, siteid)}">
+<link rel="apple-touch-icon" sizes="167x167" href="${Resource.msgf('pwa.app.apple.icon.167', 'pwa', null, siteid)}">
+<link rel="apple-touch-icon" sizes="152x152" href="${Resource.msgf('pwa.app.apple.icon.152', 'pwa', null, siteid)}">
+<link rel="apple-touch-icon" sizes="120x120" href="${Resource.msgf('pwa.app.apple.icon.120', 'pwa', null, siteid)}">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="apple-touch-startup-image" href="${Resource.msgf('pwa.app.apple.spash.2048-2732', 'pwa', null, siteid)}"
+    media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="${Resource.msgf('pwa.app.apple.spash.2732-2048', 'pwa', null, siteid)}"
+    media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="${Resource.msgf('pwa.app.apple.spash.1668-2388', 'pwa', null, siteid)}"
+    media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="${Resource.msgf('pwa.app.apple.spash.2388-1668', 'pwa', null, siteid)}"
+    media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="${Resource.msgf('pwa.app.apple.spash.1668-2224', 'pwa', null, siteid)}"
+    media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="${Resource.msgf('pwa.app.apple.spash.2224-1668', 'pwa', null, siteid)}"
+    media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="${Resource.msgf('pwa.app.apple.spash.1536-2048', 'pwa', null, siteid)}"
+    media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="${Resource.msgf('pwa.app.apple.spash.2048-1536', 'pwa', null, siteid)}"
+    media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="${Resource.msgf('pwa.app.apple.spash.1242-2688', 'pwa', null, siteid)}"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="${Resource.msgf('pwa.app.apple.spash.2688-1242', 'pwa', null, siteid)}"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="${Resource.msgf('pwa.app.apple.spash.1125-2436', 'pwa', null, siteid)}"
+    media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="${Resource.msgf('pwa.app.apple.spash.2436-1125', 'pwa', null, siteid)}"
+    media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="${Resource.msgf('pwa.app.apple.spash.828-1792', 'pwa', null, siteid)}"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="${Resource.msgf('pwa.app.apple.spash.1792-828', 'pwa', null, siteid)}"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="${Resource.msgf('pwa.app.apple.spash.1242-2208', 'pwa', null, siteid)}"
+    media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="${Resource.msgf('pwa.app.apple.spash.2208-1242', 'pwa', null, siteid)}"
+    media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="${Resource.msgf('pwa.app.apple.spash.2732-2048', 'pwa', null, siteid)}"
+    media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="${Resource.msgf('pwa.app.apple.spash.2732-2048', 'pwa', null, siteid)}"
+    media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="${Resource.msgf('pwa.app.apple.spash.2732-2048', 'pwa', null, siteid)}"
+    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="${Resource.msgf('pwa.app.apple.spash.2732-2048', 'pwa', null, siteid)}"
+    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+
+<isset name="swurl" value="${URLUtils.https('Pwa-SW').toString()}" scope="page" />
+<isset name="preventadd2hs" value="${Resource.msg('pwa.app.preventadd2hs', 'pwa', null)}" scope="page" />
+
+
+<script>
+if ("serviceWorker" in navigator) {
+    if (navigator.serviceWorker.controller) {
+        console.log("Active service worker found, no need to register");
+    } else {
+        // Register the service worker
+        navigator.serviceWorker
+        .register("${swurl}")
+        .then(function (registration) {  
+            console.log("Service Worker registered! Scope:", registration.scope);
+        })
+        .catch(function (err) {
+            console.log("Service Worker registration failed:", err);
+        });
+    }
+}
+
+/**
+ * Add install PWA event to window which can be triggered when required
+ */
+window.addEventListener('beforeinstallprompt', (evt) => {
+    // hide default prompt app install banner
+    if(${preventadd2hs} === true){
+        evt.preventDefault()
+    }
+    // Stash the event so it can be triggered later.
+    window.add2hs = evt;
+});
+</script>

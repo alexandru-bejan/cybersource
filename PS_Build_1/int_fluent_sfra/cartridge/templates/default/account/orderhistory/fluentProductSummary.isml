@@ -1,0 +1,58 @@
+<div class="product-summary-block">
+    <isloop items="${fulfilment.items}" var="fulfilmentItem" status="filoopstate">
+        <div class="product-line-item">
+            <iscomment>Get the Product Line Item for displaying product details against the Fluent Fulfilment.
+                  This is the first product for a given ID, so may not correspond to the exact line item, however it
+                  will suffice for displaying product details.
+            </iscomment>
+            <div class="line-item-header">
+                <div class="line-item-name">
+                    <span>${fulfilmentItem.productName}</span>
+                </div>
+            </div>
+            <div class="product-line-item-details d-flex flex-row">
+                <div class="item-image">
+                    <img class="product-image"
+                        src="${fulfilmentItem.images.small[0].url}"
+                        alt="${fulfilmentItem.images.small[0].alt}"
+                        title="${fulfilmentItem.images.small[0].title}">
+                </div>
+                <div class="item-attributes">
+                    <isloop items="${fulfilmentItem.variationAttributes}" var="attribute">
+                        <p class="line-item-attributes">${attribute.displayName}: ${attribute.displayValue}</p>
+                    </isloop>
+
+                    <div class="item-options">
+                        <isloop items="${fulfilmentItem.options}" var="option">
+                            <div class="line-item-option">${option}</div>
+                        </isloop>
+                    </div>
+                </div>
+            </div>
+            <div><hr class="line-item-divider"></div>
+            <div class="row align-items-start d-flex justify-content-end">
+
+                <!--- quantity --->
+                <div class="col-3 line-item-quantity">
+                    <p class="line-item-pricing-info">
+                        <span class="line-item-total-text qty-card-quantity-label">
+                        ${Resource.msg('field.selectquantity','cart',null)}
+                        </span><br/>
+                        <span class="pricing qty-card-quantity-count"><isprint value="${fulfilmentItem.quantity}" formatter="##" /></span>
+                    </p>
+                </div>
+                <!--- line item total price --->
+                <div class="col-3 line-item-total-price">
+                    <p class="line-item-pricing-info">
+                        <span class="line-item-total-text line-item-total-price-label">
+                            ${Resource.msg('label.total.price','cart',null)}
+                        </span>
+                    </p>
+                    <div class="price">
+                        <div class="pricing line-item-total-price-amount}">${fulfilmentItem.priceTotal.price}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </isloop>
+</div>

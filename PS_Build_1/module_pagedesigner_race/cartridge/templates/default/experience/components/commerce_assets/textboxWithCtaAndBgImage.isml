@@ -1,0 +1,58 @@
+<isscript> var assets =
+require('*/cartridge/scripts/assets.js');
+assets.addCss('/css/experience/textboxCtaWithBgImg.css');
+ </isscript>
+
+<script id="www-widgetapi-script"
+	src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflgkj_Yq/www-widgetapi.js"
+	async=""></script>
+<script src="https://www.youtube.com/player_api"></script>
+
+<div class="bg-wrapper">
+	<div class="main-container image-video-container">
+		<isif condition="${!pdict.isVideo}">
+			<picture>
+		    	<source srcset="${pdict.imageDefault.src.mobile}" media="(max-width: 544px)"/>
+		    	<source srcset="${pdict.imageDefault.src.tablet}" media="(max-width: 768px)"/>
+		        <img class="component-image img-fluid" src="${pdict.imageDefault.src.desktop}"
+		       	<isif condition="${pdict.imageDefault.alt}">alt="${pdict.imageDefault.alt}" title="${pdict.imageDefault.alt}"</isif> 
+		       	 style='width: 100%;'
+		       	 />
+		  	</picture>
+		<iselse/>
+			<div class="video-container">
+					<iframe class="video"
+						src="${pdict.videoPath}?&showinfo=0&controls=0&autohide=1&autoplay=${pdict.isAutoPlay}"
+						frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+			</div>
+		</isif>
+	</div>
+	<isif condition="${!pdict.isVideo}">	
+		<div class="textbox-wrapper">
+			<div class="text-box-container">			
+				<div
+					class="inner-container ${pdict.containerAlignHorizontal} ${pdict.containerAlignVertical}"
+					style="color:${pdict.fontColor}; background-color:${pdict.BgColor}">
+					<isif condition="${pdict.textHeadline}">
+					<h2 class="textbox-headline">${pdict.textHeadline}</h2>
+					</isif>
+					<isif condition="${pdict.textSubline}">
+					<p class="textbox-para">${pdict.textSubline}</p>
+					</isif>
+					<isif condition="${pdict.buttonLabel1 || pdict.buttonLabel2}">
+					<div class="button-holder">
+						<isif condition="${pdict.buttonLabel1}"> <a
+							class="btn btn-primary" href="${pdict.buttonURL1}">${pdict.buttonLabel1}</a>
+						</isif>
+						<isif condition="${pdict.buttonLabel2}"> <a
+							class="btn btn-primary" href="${pdict.buttonURL2}">${pdict.buttonLabel2}</a>
+						</isif>
+					</div>
+					</isif>
+				</div>
+			</div>
+		</div>
+	</isif>
+</div>

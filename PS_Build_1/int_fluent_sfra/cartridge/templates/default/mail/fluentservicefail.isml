@@ -1,0 +1,23 @@
+<!-- TEMPLATENAME: fluentservicefail.isml -->
+<iscontent type="text/html " charset="UTF-8"/>
+<head></head>
+<body>
+    <isif condition="${pdict.type == Resource.msg('errortypes.batchupload','fluent',null)}">
+        <p>Fluent ERROR. This was email generated from the int_fluent cartridge.</p>
+        <p>Use the information in this email to investigate the cause of the issue.</p>
+        <p>Error Type: <b>${pdict.type}</b></p>
+        <p>${pdict.payload}</p>
+        <isif condition="${pdict.additional != null}">
+            <p>Additional Details: ${pdict.additional}</p>
+        </isif>
+    <iselse>
+        <p>Fluent ERROR. This was email generated from the int_fluent cartridge.</p>
+        <p>Use the information in this email to investigate the cause of the issue.</p>
+        <p>Error Type: <b>${pdict.type}</b></p>
+        <p>Payload: ${pdict.payload}</p>
+        <p>Response: ${pdict.response}</p>
+        <isif condition="${pdict.additional != null}">
+            <p>Additional Details: ${pdict.additional}</p>
+        </isif>
+    </isif>
+</body>

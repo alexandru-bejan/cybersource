@@ -1,0 +1,16 @@
+@import "slick-carousel/slick/slick";
+@import "slick-carousel/slick/slick-theme";
+
+.recommendations {
+    margin: 2rem 0;
+    .heading-callout {
+        text-align: center;
+        margin-bottom: 0.625rem;
+    }
+    .product-tile {
+        max-width: 270px;
+    }
+    .slick-prev:before, .slick-next:before {
+        color: $grey8;
+    }
+}

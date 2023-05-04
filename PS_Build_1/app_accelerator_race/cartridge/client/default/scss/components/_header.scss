@@ -1,0 +1,73 @@
+@import "~base/components/header";
+
+.sticky-navigation {
+    position: fixed;
+    width: 100%;
+    z-index: 101;
+    background-color: $grey1;
+    box-shadow: 0 0.2rem 0.2rem 0 rgba(0,0,0,.2);
+}
+
+.suggestions {
+    display: flex;
+}
+
+.search-mobile {
+    display: inline-block;
+    margin: 1em 0 0 0;
+    width: 0;
+    .form-control {
+        background-color: transparent;
+        border: none;
+        &:focus {
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+            -webkit-box-shadow: none;
+        }
+    }
+}
+
+.toggle-border {
+    border: 2px solid $black;
+    border-radius: 2rem;
+}
+
+.search-hide {
+    font-size: 1.6em;
+    width: auto;
+    line-height: 2.5em;
+    height: auto;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: .1875rem;
+}
+
+
+.navbar-header {
+    .user {
+        .popover {
+            padding-left: 0.5em;
+
+            a {
+                white-space: nowrap;
+                margin-bottom: 0;
+                display: flex;
+                justify-content: space-between;
+                padding-left: 1.5rem;
+                position: relative;
+
+                .fa {
+                    position: absolute;
+                    left: 0.3rem;
+                    top: 0.3rem;
+                }
+            }
+        }
+    }
+    .pull-left {
+        a {
+            padding-right: 1.875rem;
+        }
+    }
+}

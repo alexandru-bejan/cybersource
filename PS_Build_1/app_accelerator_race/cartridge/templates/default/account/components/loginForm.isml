@@ -1,0 +1,82 @@
+<form action="${pdict.actionUrl}" class="login" method="POST" name="login-form" id="form">
+    <div class="form-group required">
+        <label class="form-control-label" for="login-form-email">
+            ${Resource.msg('label.input.login.email', 'login', null)}
+        </label>
+        <input type="email" id="login-form-email" required aria-required="true" class="form-control required" aria-describedby="form-email-error" name="loginEmail" data-mc-email-valid-url="${URLUtils.url('Account-ValidateEmailMCloud')}" value="${pdict.userName}">
+        <div class="invalid-feedback" id="login-form-email-error">${Resource.msg('form.email.error', 'common', null)}</div>
+    </div>
+
+    <div class="form-group required">
+        <label class="form-control-label" for="login-form-password">
+                ${Resource.msg('label.input.login.password', 'login', null)}
+        </label>
+        <button type="button" class="info-icon">
+            <span class="icon" aria-hidden="true">?</span>
+            <span class="sr-only">${Resource.msg('label.help','cart',null)}</span>
+            <span class="tooltip d-none">
+                ${Resource.msg('form.password.suggestion','common',null)}
+            </span>
+        </button>
+        <input type="password" id="login-form-password" required aria-required="true" class="form-control required" aria-describedby="form-password-error" name="loginPassword">
+        <span toggle="#password-field" class="fa fa-fw fa-eye-slash field-icon toggle-password"></span>
+        <div class="invalid-feedback" id="login-form-password-error"></div>
+    </div>
+
+    <div class="clearfix">
+        <div class="form-group custom-control custom-checkbox pull-left remember-me">
+            <input type="checkbox" class="custom-control-input" id="rememberMe" name="loginRememberMe" value="true"
+                <isif condition="${pdict.rememberMe}">checked</isif>
+            >
+            <label class="custom-control-label" for="rememberMe">
+                ${Resource.msg('label.checkbox.login.rememberme', 'login', null)}
+            </label>
+        </div>
+
+        <div class="pull-right forgot-password text-right">
+            <a class="d-sm-none" href="${URLUtils.url('Account-PasswordReset')}" title="${Resource.msg('link.login.forgotpassword', 'login', null)}">
+                ${Resource.msg('link.login.forgotpassword', 'login', null)}
+            </a>
+
+            <a
+                id="password-reset"
+                class="hidden-xs-down"
+                title="${Resource.msg('link.login.forgotpassword', 'login', null)}"
+                data-toggle="modal"
+                href="${URLUtils.url('Account-PasswordResetDialogForm')}"
+                data-target="#requestPasswordResetModal">
+                ${Resource.msg('link.login.forgotpassword', 'login', null)}
+            </a>
+        </div>
+    </div>
+    <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+
+    <div 
+        class="g-recaptcha" 
+        data-sitekey="6Lf7cmAjAAAAAKSBHN5P7oAwcNj8uZzZckV1ytNl" 
+        data-callback="grecaptchaCallback" 
+        data-size="invisible"
+    ></div>
+
+    <button id="submit" type="submit" class="btn btn-block btn-primary">${Resource.msg('button.text.loginform', 'login', null)}</button>
+</form>
+
+<script>
+    var form = document.getElementById('form');
+
+    form.addEventListener('submit', grecaptchaValidate);
+    //form.on('submit', grecaptchaValidate);
+
+    function grecaptchaCallback() {
+            if (grecaptcha.getResponse() !== '') {
+                form.submit();
+            }
+            grecaptcha.reset();
+    }
+
+    function grecaptchaValidate(e) {
+        console.log('test1');
+        e.preventDefault();
+        grecaptcha.execute();
+    }
+</script>

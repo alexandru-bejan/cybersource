@@ -1,0 +1,10 @@
+@import "~base/account/addressBook";
+@import "../customvariable";
+
+@media only screen and (min-device-width: $breakpoint-ipad-min) {
+    .row.justify-content-center {
+        .btn-block {
+            margin-bottom: 10px;
+        }
+    }
+}

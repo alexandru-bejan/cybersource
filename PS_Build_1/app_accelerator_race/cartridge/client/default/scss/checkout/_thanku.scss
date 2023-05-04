@@ -1,0 +1,21 @@
+.order-summary-mobile  {
+    .detail-section {
+        background: $headerBannerTextColor;
+    }
+}
+.card.order-product-summary {
+    border: none;
+}
+@include media-breakpoint-down(desktop) {
+    .card.order-product-summary  {
+        display:none;
+    }
+    .checkout-order-total-summary {
+        display: none;
+    }
+    .order-summary-mobile {
+        .card.order-product-summary {
+            display: block;
+        }
+    }
+}

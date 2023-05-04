@@ -1,0 +1,141 @@
+$appBarColor: #01845A;
+$buttonPrimaryColor:#01845A;
+$buttonPrimaryDisabledColor: #01845A;
+$closeButtonColor: $buttonPrimaryColor;
+$buttonOutlineColor: #01845A;
+$productCardTextColor: #01845A;
+$breadcrumbColor: $productCardTextColor;
+$priceColor: #333;
+$backToTopArrowColor: #01845A;
+$footerBackgroundColor: #fff;
+$heroBannerOverlayBarBackgroundColor: #01845A;
+$productDetailNameColor: #01845A;
+$pdpDescriptionAndDetailColor: #01845A;
+$footerListTextColor: #00539f;
+$loginTabColor: #495057;
+$newsletterSignupBg: #444;
+
+//header
+@media (min-width: 769px) {
+	.main-menu {
+		background-color: $appBarColor;
+		.container {
+			max-width: 100%;
+		}
+	}
+}
+.brand img.hidden-md-down {
+	width: auto;
+	height: 100%;
+}
+.header-banner .close-button .close {
+	background-color: $closeButtonColor;
+}
+
+//footer
+.home-email-signup {
+	background-color: $newsletterSignupBg;
+}
+footer {
+	background-color: $appBarColor;
+}
+footer,
+footer#footercontent a {
+	color: $footerBackgroundColor;
+}
+footer .back-to-top i.fa-arrow-up {
+	color: $appBarColor;
+}
+footer .container div.collapsible-xs button.title {
+	color: $footerBackgroundColor;
+}
+
+//buttons
+.btn-primary {
+	background-color: $buttonPrimaryColor;
+	border-color: $buttonPrimaryColor;
+
+  &:hover {
+		background-color: $buttonPrimaryColor;
+		color: $footerBackgroundColor;
+  }
+}
+.btn-primary.disabled,
+.btn-primary:disabled {
+  background-color: $buttonPrimaryDisabledColor;
+  border-color: $buttonPrimaryDisabledColor;
+}
+.btn-outline-primary {
+  color: $buttonOutlineColor;
+  border-color: $buttonOutlineColor;
+  &:hover {
+    background-color: $buttonOutlineColor;
+		border-color: $buttonOutlineColor;
+		color: $footerBackgroundColor;
+  }
+}
+header~#maincontent .container a:not(.btn-primary):not(.btn-outline-primary) {
+  color: $footerListTextColor;
+}
+
+//generic banner title
+h1.page-title,
+h1.page-title::before,
+h1.page-title:before {
+  background-color: $heroBannerOverlayBarBackgroundColor;
+}
+
+//product
+.product-tile .tile-body .pdp-link a {
+	color: $footerListTextColor;
+}
+.price {
+	color: $priceColor;
+}
+.product-name,
+.attribute label,
+.availability.row.product-availability {
+  color: $footerListTextColor;
+}
+.description-and-detail {
+  color: $priceColor;
+}
+.refinements ul li button {
+	color: $priceColor;
+}
+
+//cart
+.minicart .minicart-quantity {
+	background-color: $appBarColor;
+}
+.line-item-name {
+	color: $footerListTextColor;
+}
+.optional-promo {
+	color: $footerListTextColor;
+}
+
+//checkout
+.edit-button,
+.btn-show-details,
+.btn-add-new {
+	color: $footerListTextColor;
+}
+
+//my account
+.nav-tabs .nav-link.active {
+	border-bottom-color: $footerListTextColor;
+}
+.login-page .nav-item>.nav-link {
+	color: $loginTabColor;
+	outline: 0 none;
+}
+.card .card-header a {
+	color: $footerListTextColor;
+}
+.card .card-footer .card-link {
+	color: $footerListTextColor;
+}
+a.normal {
+	color: $footerListTextColor;
+}

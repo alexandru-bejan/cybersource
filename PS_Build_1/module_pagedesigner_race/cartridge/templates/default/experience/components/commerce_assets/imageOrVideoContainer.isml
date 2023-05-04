@@ -1,0 +1,21 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/experience/imageVideoContainer.css');
+</isscript>
+
+<div class="main-container">
+<isif condition="${!pdict.isVideo}">
+	<picture>
+    	<source srcset="${pdict.imageDefault.src.mobile}" media="(max-width: 544px)"/>
+    	<source srcset="${pdict.imageDefault.src.tablet}" media="(max-width: 768px)"/>
+        <img class="component-image img-fluid" src="${pdict.imageDefault.src.desktop}"
+       	<isif condition="${pdict.imageDefault.alt}">alt="${pdict.imageDefault.alt}" title="${pdict.imageDefault.alt}"</isif> 
+       	 style='width: 100%;'
+       	 />
+  	</picture>
+<iselse/>
+<div class="video-container">
+	<iframe src="${pdict.videoPath}?autoplay=${pdict.isAutoPlay}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</isif>
+</div>

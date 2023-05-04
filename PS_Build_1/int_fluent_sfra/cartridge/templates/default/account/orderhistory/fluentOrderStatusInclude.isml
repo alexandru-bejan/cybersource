@@ -1,0 +1,10 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<iscomment>
+    This template renders an order's status.
+</iscomment></br>
+<span class="summary-section-label">${Resource.msg('label.orderhistory.orderstatus','account',null)}</span>
+<isif condition="${FluentOrderDetails.statusDisplay != null}">
+    <span class="summary-details clearfix">${Resource.msg(FluentOrderDetails.statusDisplay,'fluent', null)}</span>
+<iselse/>
+    <span class="summary-details clearfix">${Resource.msg('order.status.unknown','fluent', null)}</span>
+</isif>

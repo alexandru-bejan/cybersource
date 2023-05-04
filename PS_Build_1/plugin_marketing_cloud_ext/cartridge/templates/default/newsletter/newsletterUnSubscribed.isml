@@ -1,0 +1,11 @@
+<isdecorate template="common/layout/page">
+    <div class="container">
+        <div class="row">
+            <isif condition="${pdict.unsubscribed}">
+                ${Resource.msgf('customer.unsubscribe.successfull', 'customemails', null, pdict.email)}
+            <iselse/>
+                ${Resource.msgf('customer.unsubscribe.unsuccessfull', 'customemails', null, pdict.email)}
+            </isif>
+        </div>
+    </div>
+</isdecorate>

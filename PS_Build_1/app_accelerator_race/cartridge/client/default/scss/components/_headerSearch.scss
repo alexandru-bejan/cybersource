@@ -1,0 +1,41 @@
+@import "~base/components/headerSearch";
+
+.site-search {
+    height: 2.2em;
+    .suggestions-wrapper {
+        .suggestions {
+            width: 20rem;
+            .col-sm-10 {
+                max-width: 100%;
+            }
+            .item {
+                .name {
+                    display: inline-block;
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+.suggestions {
+	.swatch-circle {
+		margin-right: 0.513em;
+	}
+	.item {
+		a {
+			display: flex;
+		}
+		.name {
+			width: calc(100% - 3em);
+		}
+	}
+	.category-parent {
+		display: block;
+	}
+}
+
+.fa-search {
+    &:focus {
+        outline: none;
+    }
+}

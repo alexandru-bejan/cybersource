@@ -1,0 +1,19 @@
+@import "~base/components/toastMessage";
+@import "~base/components/productCommon";
+
+.container.product-detail {
+    margin-top: 2em;
+    margin-bottom: 2em;
+
+    @include media-breakpoint-only(xs) {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .price .sales {
+        font-size: 1.25rem;// custom change
+    }
+}
+
+.cart-wishlist-btn {
+    margin: 0 auto;
+}

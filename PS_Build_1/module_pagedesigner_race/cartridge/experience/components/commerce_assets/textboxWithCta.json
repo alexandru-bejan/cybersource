@@ -1,0 +1,129 @@
+{
+  "name": "Text Box with CTA",
+  "description": "Promo text and CTA",
+  "group": "commerce_assets",
+  "attribute_definition_groups": [
+    {
+      "id": "textSection",
+      "name": "Text Section",
+      "description": "The headline and para content",
+      "attribute_definitions": [
+        {
+          "id": "textHeadline",
+          "name": "Heading",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "textSubline",
+          "name": "Para content",
+          "type": "string",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "button1Section",
+      "name": "Button1 Section",
+      "description": "CTA1 section",
+      "attribute_definitions": [
+        {
+          "id": "buttonLabel1",
+          "name": "Button Label",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "buttonURL1",
+          "name": "Button URL",
+          "type": "url",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "button2Section",
+      "name": "Button2 Section",
+      "description": "CTA1 section",
+      "attribute_definitions": [
+        {
+          "id": "buttonLabel2",
+          "name": "Button Label",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "buttonURL2",
+          "name": "Button URL",
+          "type": "url",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "uiAlignmentHorizontal",
+      "name": "Horizontal UI Alignment",
+      "description": "class needed for horizontally aligning content section",
+      "attribute_definitions": [
+        {
+          "id": "containerAlignHorizontal",
+          "name": "Alignment of container horizontally",
+          "type": "enum",
+          "values": [
+          	"Left",
+            "Right",
+            "Center"
+          ],
+          "default_value": "Center",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "uiAlignmentVertical",
+      "name": "Vertical UI Alignment",
+      "description": "class needed for vertically aligning content section",
+      "attribute_definitions": [
+        {
+          "id": "containerAlignVertical",
+          "name": "Alignment of container vertically",
+          "type": "enum",
+          "values": [
+          	"Top",
+            "Middle",
+            "Bottom"
+          ],
+          "default_value": "Middle",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "textFontColor",
+      "name": "Text Font Color",
+      "description": "Font Color for TextBox",
+      "attribute_definitions": [
+        {
+          "id": "fontColor",
+          "name": "Font Color",
+          "type": "string",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "textBgColor",
+      "name": "Background Color",
+      "description": "Background Color for TextBox",
+      "attribute_definitions": [
+        {
+          "id": "BgColor",
+          "name": "Bg Color",
+          "type": "string",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

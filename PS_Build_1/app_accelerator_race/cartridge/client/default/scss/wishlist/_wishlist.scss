@@ -1,0 +1,26 @@
+@import "~wishlist/wishlist/wishlist";
+
+.card.product-info{
+	.add-to-cart-wishList{
+		margin: auto;
+		display: flex;
+		padding-top: 1rem;
+		padding-bottom: 0.75rem;
+	}
+	.quantity-selector{
+		width: 6.6rem;
+	}
+	.item-attributes{
+		padding: 1rem;
+	}
+	.line-item-price-info {
+	    margin-bottom: 0.25rem;
+		font-size: 0.813rem;
+	}
+	.product-card-price{
+	padding-bottom: 0.5rem;
+	}
+	.quantity-label {
+		font-size: 0.813rem;
+	}
+}

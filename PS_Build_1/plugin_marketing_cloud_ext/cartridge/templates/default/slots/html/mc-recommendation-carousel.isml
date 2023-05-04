@@ -1,0 +1,62 @@
+<iscomment>
+    This template is to render recommendation carousel from marketing cloud.
+</iscomment>
+<style>
+    .igo_product a:last-of-type,.igo_product_product_name .igo_product_product_name_label{display:none}
+    .igo_product_product_name .igo_product_product_name_value{font-weight:900;font-size:20px}
+    .product-carousel .slick-slide{margin: 0 6px}.igo_product_image{max-width:100%}
+</style>
+
+<iscomment>
+    Add script src fetched throught marketing cloud in th slot html container
+</iscomment>
+<isscript>
+    var mcMID = '6419056';//require('dw/system/Site').current.getCustomPreferenceValue('mcMID');
+    var mcRecSourceURL = "https://"+mcMID+".recs.igodigital.com/a/v2/"+mcMID+"/product/recommend.js?item=";
+</isscript>
+<div id="igdrec_1" class="mc-product-carousel"></div>
+<script>
+    window.onload = function() {
+        var pid = $('.product-detail').data('pid');
+        var mcURL = '<isprint value="${mcRecSourceURL}" encoding="off" />' + pid;
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.src = mcURL;
+        $("body").append(s);
+        
+        var target = document.querySelector('#igdrec_1');
+
+    // create an observer instance
+    var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            var $igo_boxbody = $('.igo_boxbody');
+            if($igo_boxbody.length && $igo_boxbody.hasClass('slick-initialized')) {
+                return;
+            }
+            $igo_boxbody.slick( {
+                dots: false,
+                infinite: true,
+                mobileFirst: true,
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                arrows: false,
+                responsive: [
+                    {
+                        breakpoint: 769,
+                        settings: {
+                            arrows: true,
+                            slidesToShow: 4
+                        }
+                    },
+                ]
+            });
+        });
+    });
+
+    // configuration of the observer:
+    var config = { childList: true }
+
+    // pass in the target node, as well as the observer options
+    observer.observe(target, config);
+    } 
+</script>

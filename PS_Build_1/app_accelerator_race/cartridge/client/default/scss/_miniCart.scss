@@ -1,0 +1,299 @@
+@import "~base/variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "productCard";
+@import "~base/miniCart";
+
+.minicart {
+    position: relative;
+
+    h1 {
+        font-size: 1rem;
+    }
+
+    .line-item-total-price {
+        margin-top: -17px;
+    }
+
+    .cart {
+        padding-top: 0.625em;
+        padding-bottom: 0.625em;
+        background-color: $body-bg;
+    }
+
+    .line-item-attributes {
+        display: inline-block; //custom change
+    }
+
+    .remove-btn {
+        color: $primary; //custom change
+        text-decoration: underline; //custom change
+        float: right;
+        background-color: white;
+        border: none;
+        font-size: 0.75rem; //custom change
+        margin-top: 0; //custom change
+        padding: 0;
+    }
+
+    .pricing {
+        font-size: 0.875rem; // custom change
+    }
+
+    .product-summary {
+        margin-right: -0.938em;
+        max-height: 20.875em; // custom change
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-right: 0.938em;
+    }
+
+    .card-body {
+        padding: 0.625em;
+    }
+
+    .quantity-label {
+        font-size: 0.813em;
+    }
+
+    .quantity-form {
+        margin-top: 0.513em; //custom change
+        border-width: .0625rem;
+        border-style: solid;
+        max-width: 6.6rem;
+    }
+
+    .quantity {
+        width: 18%; //custom change
+        float: left; //custom change
+        min-width: 2.5rem; //custom change
+        border-radius: 0; //custom change
+        padding: 0.375rem 0.625rem; //custom change
+        text-align: center; //custom change
+        border: 0;
+    }
+
+    .minus,
+    .add {
+        font-size: 1.188rem; //custom change
+    }
+
+    .popover {
+        top: 100%;
+        left: auto;
+        right: 0;
+        min-width: 23.44rem;
+        max-width: 23.44rem;
+        min-height: 22.7rem;
+        display: none;
+
+        &::before {
+            left: auto;
+            right: 15px;
+        }
+
+        &::after {
+            left: auto;
+            right: 16px;
+        }
+
+        &.show {
+            display: block;
+        }
+    }
+
+    .minicart-footer {
+        border-top: 1px solid $grey3;
+    }
+
+    .estimated-total {
+        margin-top: 0.625em;
+        margin-bottom: 0.625em;
+        .sub-total {
+            width: 100%;
+        }
+        a {
+            font-size: 1rem; // custom change
+            font-weight: 600;
+        }
+        .info-icon {
+          margin-left: 0;
+          margin-top: -20px;
+          .tooltip {
+            transform: translate(-50%, 13.7em);
+            font-size: 0.75rem;
+            min-width: 8rem;
+            max-width: 15rem;
+            &::after {
+                top: -1em;
+                transform: translate(0.1rem,50%) rotate(180deg);
+            }
+          }
+        }
+    }
+
+    .price-fields {
+        font-size: 1em;
+        font-weight: 600;
+    }
+
+    .line-item-divider {
+        margin: 0.625em -0.625em 0.625em -1.325em;
+    }
+
+    .line-item-name {
+        width: 90%;
+    }
+
+    .card {
+        border: none; //custom change
+        border-bottom: 1px solid $grey3; //custom change
+        margin-bottom: 0; //custom change
+    }
+
+    .promo-code-form .form-group {
+        margin-top: 0.5rem;
+        margin-bottom: 0; //custom-change
+    }
+
+    .coupon-price-adjustment+.coupon-price-adjustment {
+        margin-top: 0.25rem; //custom change
+    }
+
+    .coupon-promotion-relationship {
+        margin: 0; //custom change
+        list-style: none; //custom change
+        padding: 0; //custom change
+        // color: $grey4; //custom change
+        font-size: 0.75rem; //custom change
+    }
+
+    .coupons-and-promos {
+        margin-bottom: 0.625rem; //custom change
+        padding-right: 0; //custom change
+        padding-left: 0; //custom change
+    }
+
+    .coupon-code {
+        font-size: 1.125em; //custom change
+    }
+
+    .coupon-applied {
+        color: $success; //custom change
+        font-size: 0.813em; //custom change
+    }
+
+    .coupon-not-applied {
+        color: $danger; //custom change
+        font-size: 0.813em; //custom change
+    }
+
+    .coupon-error {
+        color: $danger; //custom change
+        margin-top: 0.25rem; //custom change
+    }
+
+    .coupon-missing-error {
+        display: none; //custom change
+    }
+
+    .remove-coupon {
+        border: none; //custom change
+        background: transparent; //custom change
+    }
+}
+
+
+.hide-link-med {
+
+    @include media-breakpoint-only(sm) {
+        display: none;
+    }
+}
+
+.hide-no-link {
+
+    @include media-breakpoint-up(md) {
+        display: none;
+    }
+
+    @include media-breakpoint-down(xs) {
+        display: none;
+    }
+}
+
+.price {
+    .strike-through {
+        font-size: 0.875rem; // custom  change
+    }
+}
+
+.promotion-msg {
+    .approaching-discounts {
+        &>div {
+            padding-bottom: 0.063rem; // custom  change
+            padding: 0.125rem 0.625rem 0.063rem; // custom  change
+        }
+
+        .single-approaching-discount {
+            border-radius: 5px; // custom  change
+            color: $black; // custom  change
+            background: #c239341f; // custom  change
+        }
+    }
+
+    p {
+        font-size: 1rem; // custom  change
+        margin-bottom: 0.313rem; // custom  change
+    }
+}
+
+.applied-promotion-discount {
+    color: $success; // custom  change
+    float: right; // custom  change
+}
+
+//-------- custom change----------
+.checkout-btn {
+    @include media-breakpoint-up(sm) {
+        margin-bottom: 1rem;
+    }
+}
+
+.checkout-and-applepay {
+    @include media-breakpoint-down(xs) {
+        &>.row {
+            padding: 0;
+            margin: 0;
+
+            #cart-checkout-button {
+                padding: 0;
+            }
+        }
+    }
+}
+//------------custom change--------
+
+.item-image {
+    height: 5.625em;
+    width: 5.625em;
+    margin-right: 0.938em;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-top: 0.45em;
+}
+
+.order-discount {
+    .info-icon {
+        .icon {
+            background-color: $black;
+            width: 1.2rem;
+            line-height: 1.2rem;
+            border-radius: 0.6rem;
+        }
+        .tooltip {
+            min-width: 12rem;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/experience/components/commerceLayouts/layout.css');
+</isscript>
+
+<div class="mobile-2r-1c bottom-margin">
+    <div class="row no-gutter">
+        <isprint value="${pdict.regions.column1.setClassName("col-12 col-sm-6 no-gutter").render()}" encoding="off"/>
+        <isprint value="${pdict.regions.column2.setClassName("col-12 col-sm-6 no-gutter").render()}" encoding="off"/>
+    </div>
+</div>

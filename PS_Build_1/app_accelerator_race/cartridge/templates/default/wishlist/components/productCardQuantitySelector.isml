@@ -1,0 +1,12 @@
+<label class="line-item-pricing-info quantity-label"
+    for="quantity">${Resource.msg('field.selectquantity', 'cart', null)}</label>
+<div class="quantity-selector quantity-form-wishlist clearfix">
+    <a href="javascript:void(0);" class="minus <isif condition="${item.qty.toFixed(0) < 2}"> disabled-btn d-none</isif>">&minus;</a>
+    <a href="javscript:void(0)" class="js-minus-remove cs-minus-remove remove-from-wishlist btn btn-light <isif condition="${item.qty.toFixed(0) > 1}"> d-none</isif>"
+      data-url="${URLUtils.url('Wishlist-RemoveProduct', 'pid', item.pid)}" aria-label="remove">
+      <i class="fa fa-trash"></i>
+    </a>
+    <input type="text" data-max-qty="${item.inventory ? item.inventory.ats : null}" data-value="${1}" class="form-control quantity quantity-box quantity-select" value="${item.qty.toFixed(0)}"
+        id="quantity" name="quantity" data-pre-select-qty="${item.qty.toFixed(0)}" data-uuid="${item.UUID}" />
+    <a href="javascript:void(0);" class="add">&plus;</a>
+</div>

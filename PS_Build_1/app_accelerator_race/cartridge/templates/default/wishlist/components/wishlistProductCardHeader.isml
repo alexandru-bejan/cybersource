@@ -1,0 +1,23 @@
+<div class="line-item-header">
+    <!--- product name--->
+    <div class="line-item-name">
+        ${item.name}
+    </div>
+    <isif condition=${!pdict.wishlist.publicView}>
+        <!--- remove wishlist icon--->
+        <div class="d-lg-none">
+            <!---hide lg and xl--->
+            <a href="javscript:void(0)" class="remove-btn remove-from-wishlist btn btn-light remove-btn-lg"
+                data-url="${URLUtils.url('Wishlist-RemoveProduct', 'pid', item.pid)}" aria-label="remove">
+                <span aria-hidden="true">${Resource.msg('label.remove', 'cart', null)}</span>
+            </a>
+        </div>
+        <div class="hidden-md-down">
+            <!---hide medium, sm, xs--->
+            <a href="javscript:void(0)" class="remove-btn remove-from-wishlist btn btn-light remove-btn-lg"
+                data-url="${URLUtils.url('Wishlist-RemoveProduct', 'pid', item.pid)}" aria-label="remove">
+                <span aria-hidden="true">${Resource.msg('label.remove', 'cart', null)}</span>
+            </a>
+        </div>
+    </isif>
+</div>

@@ -1,0 +1,60 @@
+{
+  "name": "Image or Video container",
+  "description": "will show image or video as per user's configuration'",
+  "group": "commerce_assets",
+  "attribute_definition_groups": [
+    {
+      "id": "imageVideoContainer",
+      "name": "Image Video Container",
+      "description": "The visual display of image or video",
+      "attribute_definitions": [
+        {
+          "id": "imageDefault",
+          "name": "Image for all or desktop viewports - 4:3 ratio images are recommended",
+          "type": "image",
+          "required": false
+        },
+         {
+          "id": "imageTab",
+          "name": "Image for tablet - 4:3 ratio images are recommended",
+          "type": "image",
+          "required": false
+        },
+         {
+          "id": "imageMob",
+          "name": "Image for mobile - 4:3 ratio images are recommended",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "imageAlt",
+          "name": "Alt Text",
+          "description": "The image alt text shown by the component.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "isVideo",
+          "name": "Is Video",
+          "type": "boolean",
+          "default_value": false,
+          "required": false
+        },
+        {
+          "id": "isAutoPlay",
+          "name": "Is AutoPlay",
+          "type": "boolean",
+          "default_value": false,
+          "required": false
+        },
+        {
+          "id": "videoPath",
+          "name": "Video Path",
+          "type": "string",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

@@ -1,0 +1,16 @@
+<!--- TEMPLATENAME: recommendation-carousel.isml --->
+<isinclude template="/components/modules" />
+<div class="homepage-product-listing">
+    <isif condition="${slotcontent && slotcontent.calloutMsg}">
+        <h2 class="heading-callout">
+            <isprint value="${slotcontent.calloutMsg}" encoding="off"/>
+        </h2>
+    </isif>
+<div class="slider multiple-items">
+    <isloop items="${slotcontent.content}" var="product" status="loopState">
+        <div class="">
+            <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.ID, 'pview', 'tile', 'ratings', false, 'swatches', false, 'showQuickView', false)}"/>
+        </div>
+    </isloop>
+</div>
+</div>

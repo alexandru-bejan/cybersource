@@ -1,0 +1,9 @@
+<isset name="loqateAccountServiceKey" value="${'loqateAccountServiceKey' in dw.system.Site.current.preferences.custom ? dw.system.Site.current.preferences.custom.loqateAccountServiceKey : false}" scope="page" />
+<isset name="loqateCountryList" value="${'loqateCountryList' in dw.system.Site.current.preferences.custom ? dw.system.Site.current.preferences.custom.loqateCountryList : false}" scope="page" />
+<isset name="raceWorldPay" value="${'raceWorldPay' in dw.system.Site.current.preferences.custom ? dw.system.Site.current.preferences.custom.raceWorldPay : false}" scope="page" />
+<isset name="isloqateAccountEnabled" value="${'isloqateAccountEnabled' in dw.system.Site.current.preferences.custom ? dw.system.Site.current.preferences.custom.isloqateAccountEnabled : false}" scope="page" />
+
+<span id="isloqateAccountEnabled" data-loqate-enabled="${isloqateAccountEnabled}"></span>
+<span id="raceWorldPay" data-worldpay-enabled="${raceWorldPay}"></span>
+<span class="loqateAccountServiceKey" data-ckey-value="${loqateAccountServiceKey}"></span>
+<span class="loqateCountryList" data-ctkey-value="${loqateCountryList}"></span>

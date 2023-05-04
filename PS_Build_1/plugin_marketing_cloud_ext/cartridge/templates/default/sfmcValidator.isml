@@ -1,0 +1,8 @@
+<input type="hidden" name="subscriptionJSON" value='{"title": "${Resource.msg(' form.emailsignup.text', 'common', null)}", "placeholder" : "${Resource.msg('placeholdertext.form.emailsignup', 'homePage', null)}" , "btnText"
+    : "${Resource.msg('button.form.emailsignup', 'homePage', null)}" , "url"
+    : "${URLUtils.url('EmailSubscribe-Subscribe')}" , "description"
+    : "${Resource.msg('description.form.emailsignup', 'homePage', null)}" , "error"
+    : "${Resource.msg('form.email.error', 'common', null)}" , "validateURL"
+    : "${URLUtils.url('Account-ValidateEmailMCloud')}" }' />
+
+<script defer type="text/javascript" src="${URLUtils.staticURL('/js/sfmcValidator.js')}"></script>

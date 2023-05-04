@@ -1,0 +1,181 @@
+{
+  "name": "Text Box with CTA and BG Image",
+  "description": "Promo text and CTA",
+  "group": "commerce_assets",
+  "attribute_definition_groups": [
+    {
+      "id": "imageVideoContainer",
+      "name": "Image Video Container",
+      "description": "The visual display of image or video",
+      "attribute_definitions": [
+        {
+          "id": "imageDefault",
+          "name": "Image for all or desktop viewports - 4:3 ratio images are recommended",
+          "type": "image",
+          "required": false
+        },
+         {
+          "id": "imageTab",
+          "name": "Image for tablet - 4:3 ratio images are recommended",
+          "type": "image",
+          "required": false
+        },
+         {
+          "id": "imageMob",
+          "name": "Image for mobile - 4:3 ratio images are recommended",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "imageAlt",
+          "name": "Alt Text",
+          "description": "The image alt text shown by the component.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "isVideo",
+          "name": "Is Video",
+          "type": "boolean",
+          "default_value": false,
+          "required": false
+        },
+        {
+          "id": "isAutoPlay",
+          "name": "Is AutoPlay",
+          "type": "boolean",
+          "default_value": false,
+          "required": false
+        },
+        {
+          "id": "videoPath",
+          "name": "Video Path",
+          "type": "string",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "textSection",
+      "name": "Text Section - If Is Video has been checked , providing Text content for headline , para and button is not recommended",
+      "description": "The headline and para content",
+      "attribute_definitions": [
+        {
+          "id": "textHeadline",
+          "name": "Heading",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "textSubline",
+          "name": "Para content",
+          "type": "string",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "button1Section",
+      "name": "Button1 Section",
+      "description": "CTA1 section",
+      "attribute_definitions": [
+        {
+          "id": "buttonLabel1",
+          "name": "Button Label",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "buttonURL1",
+          "name": "Button URL",
+          "type": "url",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "button2Section",
+      "name": "Button2 Section",
+      "description": "CTA1 section",
+      "attribute_definitions": [
+        {
+          "id": "buttonLabel2",
+          "name": "Button Label",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "buttonURL2",
+          "name": "Button URL",
+          "type": "url",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "uiAlignmentHorizontal",
+      "name": "Horizontal UI Alignment - Incase of video , selecting Center is recommended",
+      "description": "class needed for horizontally aligning content section",
+      "attribute_definitions": [
+        {
+          "id": "containerAlignHorizontal",
+          "name": "Alignment of container horizontally",
+          "type": "enum",
+          "values": [
+          	"Left",
+            "Right",
+            "Center"
+          ],
+          "default_value": "Center",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "uiAlignmentVertical",
+      "name": "Vertical UI Alignment - Incase of video , selecting Center is recommended",
+      "description": "class needed for vertically aligning content section",
+      "attribute_definitions": [
+        {
+          "id": "containerAlignVertical",
+          "name": "Alignment of container vertically",
+          "type": "enum",
+          "values": [
+          	"Top",
+            "Middle",
+            "Bottom"
+          ],
+          "default_value": "Middle",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "textFontColor",
+      "name": "Text Font Color",
+      "description": "Font Color for TextBox",
+      "attribute_definitions": [
+        {
+          "id": "fontColor",
+          "name": "Font Color",
+          "type": "string",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "textBgColor",
+      "name": "Background Color",
+      "description": "Background Color for TextBox",
+      "attribute_definitions": [
+        {
+          "id": "BgColor",
+          "name": "Bg Color",
+          "type": "string",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

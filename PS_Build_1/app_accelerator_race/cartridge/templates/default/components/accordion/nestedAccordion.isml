@@ -1,0 +1,78 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets');
+    assets.addCss('/css/components/nestedAccordion.css');
+</isscript>
+
+<!-- Accordion Structure -->
+
+<div id="accordion">
+    <!-- Accordion :: Section 1 & Level 0 -->
+    <div class="card">
+        <div class="card-header" id="heading-1">
+            <h5 class="mb-0">
+                <a role="button" data-toggle="collapse" href="#collapse-1" aria-expanded="true"
+                    aria-controls="collapse-1">
+                    Item 1
+                </a>
+            </h5>
+        </div>
+        <div id="collapse-1" class="collapse show" data-parent="#accordion" aria-labelledby="heading-1">
+            <div class="card-body">
+
+                <div id="accordion-1">
+                    <!-- Accordion :: Section 1-1 & Level 1 -->
+                    <div class="card">
+                        <div class="card-header" id="heading-1-1">
+                            <h5 class="mb-0">
+                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-1-1"
+                                    aria-expanded="false" aria-controls="collapse-1-1">
+                                    Item 1 > 1
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="collapse-1-1" class="collapse" data-parent="#accordion-1"
+                            aria-labelledby="heading-1-1">
+                            <div class="card-body">
+                                Text 1 > 1
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Accordion :: Section 1-2 & Level 1 -->
+                    <div class="card">
+                        <div class="card-header" id="heading-1-2">
+                            <h5 class="mb-0">
+                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-1-2"
+                                    aria-expanded="false" aria-controls="collapse-1-2">
+                                    Item 1 > 2
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="collapse-1-2" class="collapse" data-parent="#accordion-1"
+                            aria-labelledby="heading-1-2">
+                            <div class="card-body">
+                                Text 1 > 2
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Accordion :: Section 2 & Level 0 -->
+    <div class="card">
+        <div class="card-header" id="heading-2">
+            <h5 class="mb-0">
+                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-2" aria-expanded="false"
+                    aria-controls="collapse-2">
+                    Item 2
+                </a>
+            </h5>
+        </div>
+        <div id="collapse-2" class="collapse" data-parent="#accordion" aria-labelledby="heading-2">
+            <div class="card-body">
+                Text 2
+            </div>
+        </div>
+    </div>
+</div>

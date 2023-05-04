@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+    <field formid="subEmail" label="mcsubscribe.email.label" type="string" mandatory="true" regexp="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$" parse-error="mcsubscribe.email.parse-error" binding="email" max-length="50"/>
+</form>

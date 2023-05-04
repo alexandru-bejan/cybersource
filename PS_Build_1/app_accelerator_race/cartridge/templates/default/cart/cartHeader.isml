@@ -1,0 +1,12 @@
+<div class="container cart-header-wrapper" data-carttitle="${Resource.msg('title.cart', 'cart', null)}"
+    data-url="${URLUtils.url('Home-Show')}" data-title="${Resource.msg('link.continue.shopping', 'cart', null)}">
+    <div class="cart-tabs tab-pills nav-tabs">
+        <a href="javascript:void(0)" class="tab cart-tab number-of-items active nav-link" data-href="${URLUtils.url('Cart-Show')}">
+            ${Resource.msg('title.cart', 'cart', null)} ${Resource.msgf('label.number.items.in.cart', 'cart', null, pdict.numItems)}
+        </a>
+        <a href="javascript:void(0)" class="tab wishlist-tab nav-link"
+            data-href="${URLUtils.url('Wishlist-MoreList')}">
+            ${Resource.msgf('btn.wishlist', 'cart', null)}
+        </a>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<isif condition="${slotcontent}">
+    <iscomment> Render a tile of the category Name and the Category Landing Slot Image field </iscomment>
+    <isloop items="${slotcontent.content}" var="category">
+        <picture>
+            <source media="(min-width:768px)"
+                srcset="${category.custom.slotBannerDesktop ? category.custom.slotBannerDesktop.getURL() : ''}" />
+            <source media="(min-width:480px)"
+                srcset="${category.custom.slotBannerTablet ? category.custom.slotBannerTablet.getURL() : ''}" />
+            <img alt="Banner"
+                src="${category.custom.slotBannerMobile ? category.custom.slotBannerMobile.getURL() : ''}" />
+        </picture>
+    </isloop>
+</isif>

@@ -1,0 +1,85 @@
+<!--- Shipping Address --->
+<isloop var="fulfilment" items="${FluentOrderDetails.fulfilments}" status="shippingLoop">
+    <div class="card single-shipping">
+        <div class="card-body">
+            <p class="summary-section-label shipping-addr-label d-flex justify-content-center mb-4">${Resource.msgf('multishippingshipments.shipment','fluent',null, shippingLoop.count)}</p>
+            <div class="summary-details shipping d-flex justify-content-between">
+                <isif condition="${!empty(fulfilment.fromAddress)}">
+                    <div classs="address-summary">
+                        <div class="summary-section-label">${Resource.msg('order.orderdetails.shippingfrom','fluent',null)}</div>
+                        <div class="firstName"><isprint value="${fulfilment.fromAddress.name}"/></div>
+                        <div class="address1"><isprint value="${fulfilment.fromAddress.street}"/></div>
+                        <div class="city"><isprint value="${fulfilment.fromAddress.city}"/></div>
+                        <div class="postalCode"><isprint value="${fulfilment.fromAddress.postcode}"/></div>
+                        <div class="stateCode"><isprint value="${fulfilment.fromAddress.state}"/></div>
+                        <div class="countryCode"><isprint value="${fulfilment.fromAddress.country}"/></div>
+                    </div>
+                </isif>
+                <isif condition="${FluentOrderDetails.type == 'HD' && !empty(fulfilment.toAddress)}">
+                    <div classs="address-summary">
+                        <div class="summary-section-label">${Resource.msg('order.orderdetails.shippingto','fluent',null)}</div>
+                        <div class="firstName"><isprint value="${fulfilment.toAddress.name}"/></div>
+                        <div class="address1"><isprint value="${fulfilment.toAddress.street}"/></div>
+                        <div class="city"><isprint value="${fulfilment.toAddress.city}"/></div>
+                        <div class="postalCode"><isprint value="${fulfilment.toAddress.postcode}"/></div>
+                        <div class="stateCode"><isprint value="${fulfilment.toAddress.state}"/></div>
+                        <div class="countryCode"><isprint value="${fulfilment.toAddress.country}"/></div>
+                    </div>
+                </isif>
+            </div>
+
+
+            <div class="row leading-lines d-flex justify-content-between">
+                <div class="start-lines">
+                    <p class="summary-section-label">
+                        ${Resource.msg('order.orderdetails.shippingstatus','fluent',null)}
+                    </p>
+                </div>
+                <div class="end-lines">
+                    <p class="text-justify">
+                        <isif condition="${fulfilment.consignment != null}">
+                            <isif condition="${fulfilment.status == 'FULFILLED'}">
+                                ${Resource.msg('order.fulfilment.delivered','fluent',null)}
+                            <iselse>
+                                ${Resource.msg('order.fulfilment.deliveryInProgress','fluent',null)}
+                                - ${Resource.msg(fulfilment.consignment.statusDisplay,'fluent',null)}<br>
+                                ${Resource.msg(fulfilment.consignment.carrierDisplay,'fluent',null)}
+                            </isif>
+                        <iselse>
+                             ${Resource.msg(fulfilment.statusDisplay,'fluent',null)}
+                        </isif>
+                     </p>
+                </div>
+            </div>
+
+            <div class="row leading-lines">
+                <div class="col-8 start-lines">
+                    <p class="summary-section-label">
+                        ${Resource.msg('order.orderdetails.fulfilmenttype','fluent',null)}
+                    </p>
+                </div>
+                <div class="col-4 end-lines">
+                    <p class="text-right">
+                        ${Resource.msg(fulfilment.typeDisplay,'fluent',null)}
+                    </p>
+                </div>
+            </div>
+
+            <div class="row leading-lines">
+                <div class="col-8 start-lines">
+                    <p class="summary-section-label">
+                        ${Resource.msg('order.orderdetails.shippingmethod','fluent',null)}
+                    </p>
+                </div>
+
+                <div class="col-4 end-lines">
+                    <p class="text-right">
+                        ${Resource.msg(fulfilment.deliveryTypeDisplay,'fluent',null)}
+                    </p>
+                </div>
+            </div>
+
+            <isinclude template="account/orderhistory/fluentProductSummary" />
+        </div>
+    </div>
+</isloop>

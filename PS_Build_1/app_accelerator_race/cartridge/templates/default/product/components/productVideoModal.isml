@@ -1,0 +1,17 @@
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+
+        <div class="modal-content video-content">
+            <div class="close-button-section">
+                <button type="button" class="close text-right close-button" data-dismiss="modal" aria-label="${Resource.msg('pdp.iframe.modal.close', 'product', null)}">
+                    <span>${Resource.msg('pdp.iframe.modal.close', 'product', null)}</span> <i class="fa fa-times" aria-hidden="true"></i></span>
+                </button>
+            </div>
+            <div class="modal-body video-modal">
+                <div class="embed-responsive">
+                    <iframe class="embed-responsive-item" allowfullscreen="allowfullscreen" title="${Resource.msg('pdp.iframe.title', 'product', null)}" src="${Resource.msgf('pdp.video.youtube.video.url','product',null,product.productVideo)}"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

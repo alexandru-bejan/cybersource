@@ -1,0 +1,99 @@
+<isset name="isAddressAvail" value="${pdict.shippingAddress}" scope="page" />
+
+<div class="row">
+    <div class="col-8 tooltip-cart">
+        <p>${Resource.msg('label.subtotal','cart',null)}</p>
+        <button type="button" class="info-icon">
+            <span class="icon" aria-hidden="true">?</span>
+            <span class="sr-only">${Resource.msg('label.help','cart',null)}</span>
+            <span class="tooltip d-none">
+                ${Resource.msg('label.subtotal.tooltip','cart',null)}
+            </span>
+        </button>
+    </div>
+    <div class="col-4">
+        <p class="text-right sub-total"><span class="basket-subtotal">${pdict.totals.subTotal}</span></p>
+    </div>
+</div>
+
+<input type="hidden" class="is-address-avail" value="${isAddressAvail}"/>
+
+<div class="row">
+    <div class="col-8">
+        <p>${Resource.msg('label.shipping.cost','cart',null)}</p>
+    </div>
+    <div class="col-4">
+        <p class="text-right shipping-cost">
+            <isif condition="${isAddressAvail}">
+                ${pdict.totals.totalShippingCost}
+            <iselse/>
+                -
+            </isif>
+        </p>
+    </div>
+</div>
+
+<!--- Shipping Discount --->
+<div class="row shipping-discount <isif condition="${pdict.totals.shippingLevelDiscountTotal.value === 0}">hide-shipping-discount</isif>">
+    <div class="col-8">
+        <p>${Resource.msg('label.shipping.discount', 'common', null)}</p>
+    </div>
+    <div class="col-4">
+        <p class="text-right shipping-discount-total">- ${pdict.totals.shippingLevelDiscountTotal.formatted}</p>
+    </div>
+</div>
+
+<!-- Sales Tax -->
+<div class="row">
+    <div class="col-8 tooltip-cart">
+        <p>${Resource.msg('label.sales.tax','cart',null)}</p>
+        <button type="button" class="info-icon">
+            <span class="icon" aria-hidden="true">?</span>
+            <span class="sr-only">${Resource.msg('label.help','cart',null)}</span>
+            <span class="tooltip d-none">
+                ${Resource.msg('label.salestax.tooltip','cart',null)}
+            </span>
+        </button>
+    </div>
+    <div class="col-4">
+        <p class="text-right tax-total">
+            <isif condition="${isAddressAvail}">
+                ${pdict.totals.totalTax}
+            <iselse/>
+                -
+            </isif>
+        </p>
+    </div>
+</div>
+
+<!--- Order Discount --->
+<div class="row order-discount <isif condition="${pdict.totals.orderLevelDiscountTotal.value === 0}">hide-order-discount</isif>">
+    <div class="col-8">
+        <p>${Resource.msg('label.order.discount', 'common', null)}</p>
+    </div>
+    <div class="col-4">
+        <p class="text-right order-discount-total"> - <span class="basket-order-discount">${pdict.totals.orderLevelDiscountTotal.formatted}</span></p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-8 tooltip-cart">
+        <strong>${Resource.msg('label.estimatedtotal','cart',null)}</strong>
+        <button type="button" class="info-icon">
+            <span class="icon" aria-hidden="true">?</span>
+            <span class="sr-only">${Resource.msg('label.help','cart',null)}</span>
+            <span class="tooltip d-none">
+                ${Resource.msg('label.estimatedtotal.tooltip','cart',null)}
+            </span>
+        </button>
+    </div>
+    <div class="col-4">
+        <p class="text-right grand-total">
+            <isif condition="${isAddressAvail}">
+                <span class="basket-grandtotal">${pdict.totals.grandTotal}</span>
+            <iselse/>
+                -
+            </isif>
+        </p>
+    </div>
+</div>
